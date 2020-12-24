@@ -1,6 +1,6 @@
 ## Application
 Homecoffee Application
-git
+
 ## Description
 Homecoffee is One of the best Android apps for coffee lovers. You can checkout for what we have and order what you want.
 
