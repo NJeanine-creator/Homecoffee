@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">HomeCoffee App</string>
     <string name="applogo">HomeCoffee App</string>
+    <string name="latte">Latte</string>
+    <string name="description">description</string>
+    <string name="this_is_latte_caffe_latte_is_a_coffee_drink_which_is_made_with_espresso_and_steamed_milk">This is latte. Caffe latte is a coffee drink which is made with espresso and steamed milk.</string>
+    <string name="order_now">Order Now</string>
     <string-array name="options">
         <item>Drinks</item>
         <item>Food</item>

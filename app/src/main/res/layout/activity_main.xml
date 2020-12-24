@@ -20,10 +20,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="413dp"
-        android:layout_height="245dp"
-        android:contentDescription="@string/applogo"
+        android:layout_width="371dp"
+        android:layout_height="279dp"
+        android:layout_marginTop="4dp"
 
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:contentDescription="@string/applogo"
         android:src="@drawable/coffee3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,12 +34,13 @@
 
     <ListView
         android:id="@+id/list_options"
-        android:layout_width="333dp"
-        android:layout_height="141dp"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_width="339dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:background="#FBF6F6"
+        android:contentDescription="@string/description"
         android:entries="@array/options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,38 +48,42 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="165dp"
-        android:layout_height="202dp"
+        android:layout_width="156dp"
+        android:layout_height="129dp"
+        android:contentDescription="@string/description"
         app:srcCompat="@drawable/cofee1"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="429dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="446dp" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="223dp"
-        android:layout_height="187dp"
+        android:layout_width="159dp"
+        android:layout_height="115dp"
+        android:contentDescription="@string/description"
         app:srcCompat="@drawable/coffee4"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="432dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="463dp" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="193dp"
-        android:layout_height="184dp"
+        android:layout_width="151dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/description"
         app:srcCompat="@drawable/coffee5"
-        tools:layout_editor_absoluteX="-22dp"
-        tools:layout_editor_absoluteY="610dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="578dp" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="217dp"
-        android:layout_height="171dp"
+        android:layout_width="165dp"
+        android:layout_height="115dp"
+        android:contentDescription="@string/description"
         app:srcCompat="@drawable/coffee6"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="623dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="591dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
