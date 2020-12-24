@@ -1,7 +1,7 @@
-##Application
+## Application
 Homecoffee Application
 git
-##Description
+## Description
 Homecoffee is One of the best Android apps for coffee lovers. You can checkout for what we have and order what you want.
 
 ## Author
@@ -32,5 +32,5 @@ This the appearance you get when you open the latter
 
 For further information you can reach me on 0780629636 or jnishimwe321@daviscollege.com
 
-##Copyright and Licences
+## Copyright and Licences
 Information MIT license and Copyright@2020
