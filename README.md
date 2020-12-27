@@ -11,7 +11,6 @@ Jeanine NISHIMWE
 
 Once it has installed in your devices. Navigate to the application by the following step.
 1. Open Application
-![Test Image 1](rm1.png)
 <p>
 <img src="rm1.png">
 This the appearance you get when you open the application
