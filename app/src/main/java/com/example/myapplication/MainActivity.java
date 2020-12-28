@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 }
          if(position==1){
              Intent intent= new Intent(MainActivity.this,CappuccinoActivity.class);
-             startActivity(intent);
+             startActivity (intent);
          }
             }
  /* public void OnItemClick(AdapterView<?> listView, View v, int position,long id ){
