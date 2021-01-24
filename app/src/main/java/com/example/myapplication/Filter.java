@@ -6,9 +6,6 @@ public class Filter {
     private  int imageID;
 
     public static final Filter[] filter={
-
-            new Filter("latte","This is the description of latte",R.drawable.coffee3),
-            new Filter("Cappuccino","This is the description of Cappuccino",R.drawable.coffee2),
             new Filter("Filter","This is the description of Filter",R.drawable.cofee1)
 
     };

@@ -6,10 +6,7 @@ public class Cappuccino {
     private  int imageID;
 
     public static final Cappuccino[] cappuccino ={
-
-            new Cappuccino("latte","This is the description of latte",R.drawable.coffee3),
             new Cappuccino("Cappuccino","This is the description of Cappuccino",R.drawable.coffee2),
-            new Cappuccino("Filter","This is the description of Filter",R.drawable.cofee1)
 
     };
 

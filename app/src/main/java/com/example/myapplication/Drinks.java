@@ -6,10 +6,7 @@ public class Drinks {
     private  int imageID;
 
     public static final Drinks[] drinks={
-
             new Drinks("latte","This is the description of latte",R.drawable.coffee3),
-            new Drinks("Cappuccino","This is the description of Cappuccino",R.drawable.coffee2),
-            new Drinks("Filter","This is the description of Filter",R.drawable.cofee1)
 
     };
 
