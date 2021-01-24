@@ -17,10 +17,8 @@ public class Order extends AppCompatActivity {
         setContentView(R.layout.activity_order);
     }
 
-    public void submitOrder(View view) {
-    }
-
     public void decrement(View view) {
+
     }
 
     public void increment(View view) {
@@ -29,7 +27,7 @@ public class Order extends AppCompatActivity {
     /**
      * This app displays an order form to order coffee.
      */
-    public class MainActivity extends Order{
+    public class MainActivity extends Order {
 
         int numCoffee = 0;
         int coffeePrice = 5;
@@ -46,23 +44,21 @@ public class Order extends AppCompatActivity {
         public void submitOrder(View view) {
             EditText gratuity_view = (EditText) findViewById(R.id.gratuity_view);
 
-            if(gratuity_view.getText().length() > 0){
+            if (gratuity_view.getText().length() > 0) {
                 double gratuity = Double.parseDouble(gratuity_view.getText().toString());
                 displayPrice(numCoffee * coffeePrice + gratuity);
-            }
-
-            else {
+            } else {
                 displayPrice(numCoffee * coffeePrice);
             }
         }
 
-        public void increment(View view){
+        public void increment(View view) {
             numCoffee++;
             display(numCoffee);
         }
 
-        public void decrement(View view){
-            if(numCoffee>0){
+        public void decrement(View view) {
+            if (numCoffee > 0) {
                 numCoffee--;
             }
             display(numCoffee);
@@ -76,7 +72,7 @@ public class Order extends AppCompatActivity {
             quantityTextView.setText("" + number);
         }
 
-        private void displayPrice(double number){
+        private void displayPrice(double number) {
             TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
             priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
         }
