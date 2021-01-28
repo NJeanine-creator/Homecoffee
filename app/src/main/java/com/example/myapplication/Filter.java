@@ -7,7 +7,6 @@ public class Filter {
 
     public static final Filter[] filter={
             new Filter("Filter","This is the description of Filter",R.drawable.cofee1)
-
     };
 
     public Filter(String name, String desc, int imageID){

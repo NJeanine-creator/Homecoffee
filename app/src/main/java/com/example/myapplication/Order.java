@@ -27,7 +27,7 @@ public class Order extends AppCompatActivity {
     /**
      * This app displays an order form to order coffee.
      */
-    public class MainActivity extends Order {
+    public class DrinksActivity extends Order {
 
         int numCoffee = 0;
         int coffeePrice = 5;
@@ -35,7 +35,7 @@ public class Order extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_drink);
         }
 
         /**
