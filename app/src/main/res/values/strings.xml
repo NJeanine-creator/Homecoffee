@@ -1,4 +1,7 @@
 <resources>
+    <string name="facebook_app_id">222283399268858</string>
+    <string name="fb_login_protocol_scheme">fb222283399268858</string>
+
     <string name="app_name">HomeCoffee App</string>
     <string name="applogo">HomeCoffee App</string>
     <string name="latte">Latte</string>
