@@ -46,6 +46,7 @@ public class facebook extends AppCompatActivity {
                     String imageURL = "https://graph.facebook.com/"+ loginResult.getAccessToken().getUserId()+"/picture?return_ssl_resources=1";
                     Picasso.get().load(imageURL).into(profile);
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
                 }
                 @Override
                 public void onCancel() {

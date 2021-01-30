@@ -21,7 +21,7 @@ public class CappuccinoActivity extends Activity {
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Order1.class));
+                startActivity(new Intent(getApplicationContext(), Order.class));
 
             }
         });

@@ -24,6 +24,9 @@ public class Order extends AppCompatActivity {
     public void increment(View view) {
     }
 
+    public void submitOrder(View view) {
+    }
+
     /**
      * This app displays an order form to order coffee.
      */
