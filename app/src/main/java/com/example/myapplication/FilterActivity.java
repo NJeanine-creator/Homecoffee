@@ -21,7 +21,7 @@ public class FilterActivity extends Activity {
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Order.class));
+                startActivity(new Intent(getApplicationContext(), Order2.class));
 
             }
         });

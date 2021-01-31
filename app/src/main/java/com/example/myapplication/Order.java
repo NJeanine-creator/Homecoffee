@@ -1,15 +1,26 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+//import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.text.NumberFormat;
 
 public class Order extends AppCompatActivity {
+/**
+ * This app displays an order form to order coffee.
+ */
+    int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,68 +28,106 @@ public class Order extends AppCompatActivity {
         setContentView(R.layout.activity_order);
     }
 
-    public void decrement(View view) {
-
-    }
-
+    /**
+     * This method is called when the plus button is clicked.
+     */
     public void increment(View view) {
-    }
-
-    public void submitOrder(View view) {
+        quantity++;
+        displayQuantity(quantity);
     }
 
     /**
-     * This app displays an order form to order coffee.
+     * This method is called when the minus button is clicked.
      */
-    public class DrinksActivity extends Order {
-
-        int numCoffee = 0;
-        int coffeePrice = 5;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_drink);
+    public void decrement(View view) {
+        if (quantity == 0) {
+            return;
         }
-
-        /**
-         * This method is called when the order button is clicked.
-         */
-        public void submitOrder(View view) {
-            EditText gratuity_view = (EditText) findViewById(R.id.gratuity_view);
-
-            if (gratuity_view.getText().length() > 0) {
-                double gratuity = Double.parseDouble(gratuity_view.getText().toString());
-                displayPrice(numCoffee * coffeePrice + gratuity);
-            } else {
-                displayPrice(numCoffee * coffeePrice);
-            }
-        }
-
-        public void increment(View view) {
-            numCoffee++;
-            display(numCoffee);
-        }
-
-        public void decrement(View view) {
-            if (numCoffee > 0) {
-                numCoffee--;
-            }
-            display(numCoffee);
-        }
-
-        /**
-         * This method displays the given quantity value on the screen.
-         */
-        private void display(int number) {
-            TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-            quantityTextView.setText("" + number);
-        }
-
-        private void displayPrice(double number) {
-            TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-            priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-        }
-
+        quantity--;
+        displayQuantity(quantity);
     }
+
+    /**
+     * This method is called when the order button is clicked.
+     */
+    public void submitOrder(View view) {
+        //Find the user's name
+        EditText nameField = (EditText) findViewById(R.id.name_field);
+        String value = nameField.getText().toString();
+        //Figure out if the user wants whipped cream topping
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+        //Figure out if the user wants chocolate topping
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        boolean hasChocolate = chocolateCheckBox.isChecked();
+        int price = calculatePrice(hasWhippedCream, hasChocolate);
+        String priceMessage = createOrderSummary(value, price, hasWhippedCream, hasChocolate);
+        displayMessage(priceMessage);
+    }
+
+    /**
+     * This method calculates the total price.
+     */
+    private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
+        //Price of 1 cup of coffee
+        int basePrice = 5;
+        //Add $1 if the user wants whipped cream
+        if (addWhippedCream) {
+            basePrice = basePrice + 1;
+        }
+        //Add $2 if the user wants chocolate
+        if (addChocolate) {
+            basePrice = basePrice + 2;
+        }
+        //Calculate the total order price
+        return quantity * basePrice;
+    }
+
+    /**
+     * This method creates a summary of order.
+     */
+    private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
+        String priceMessage = "Name: " + name;
+        priceMessage += "\nAdd whipped cream? " + addWhippedCream;
+        priceMessage += "\nAdd chocolate? " + addChocolate;
+        priceMessage += "\nQuantity: " + quantity;
+        priceMessage += "\nTotal: $" + price;
+        priceMessage += "\nThank you!";
+        return priceMessage;
+    }
+
+    /**
+     * This method displays the given quantity value on the screen.
+     */
+    private void displayQuantity(int numberOfCoffees) {
+        TextView quantityTextView = (TextView) findViewById(
+                R.id.quantity_text_view);
+        quantityTextView.setText("" + numberOfCoffees);
+    }
+
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView OrderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        OrderSummaryTextView.setText(message);
+    }
+
+    call.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "250780629636"));
+            if (ContextCompat.checkSelfPermission(contact.this,
+                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(contact.this, new String[]{Manifest.permission.CALL_PHONE},1);
+            }
+            else
+            {
+                startActivity(intent);
+            }
+        }
+    });
+    call=findViewById(R.id.call);
 }
+
+
