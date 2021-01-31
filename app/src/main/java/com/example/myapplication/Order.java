@@ -17,9 +17,9 @@ import androidx.core.content.ContextCompat;
 import java.text.NumberFormat;
 
 public class Order extends AppCompatActivity {
-/**
- * This app displays an order form to order coffee.
- */
+    /**
+     * This app displays an order form to order coffee.
+     */
     int quantity = 0;
 
     @Override
@@ -112,22 +112,5 @@ public class Order extends AppCompatActivity {
         TextView OrderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         OrderSummaryTextView.setText(message);
     }
-
-    call.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "250780629636"));
-            if (ContextCompat.checkSelfPermission(contact.this,
-                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(contact.this, new String[]{Manifest.permission.CALL_PHONE},1);
-            }
-            else
-            {
-                startActivity(intent);
-            }
-        }
-    });
-    call=findViewById(R.id.call);
 }
-
 

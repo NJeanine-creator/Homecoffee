@@ -105,18 +105,4 @@
             android:onClick="submitOrder"
             android:text="Order" />
     </LinearLayout>
-
-
-
-    <Button
-        android:id="@+id/call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txt"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
-        android:text="Call"
-        app:layout_constraintBaseline_toBaselineOf="@+id/email"
-        app:layout_constraintEnd_toEndOf="parent">
-    </Button>
 </ScrollView>
