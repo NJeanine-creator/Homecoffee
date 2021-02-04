@@ -23,11 +23,5 @@
     <string name="facebook_app_id">222283399268858</string>
     <string name="fb_login_protocol_scheme">fb222283399268858</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">"LIKE THE ARTICLE?"</string>
-    <string name="question_article">\@string/question_article</string>
-    <string name="yes_message">ARTICLE: Like</string>
-    <string name="no_message">ARTICLE: Thanks</string>
-    <string name="yes">\@string/yes</string>
-    <string name="no">\@string/no</string>
 
 </resources>
