@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -37,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity{
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private ProgressDialog mAuthProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity{
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getInstance().getReference();
+        createAuthProgressDialog();
 
         mcancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,13 +90,12 @@ public class RegisterActivity extends AppCompatActivity{
                     Toast.makeText(getApplicationContext(), "password incorrect!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                mAuthProgressDialog.show();
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-
-
+                                mAuthProgressDialog.dismiss();
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(RegisterActivity.this, "Registration error, please check again. Each email only registered 1 time only!",
                                             Toast.LENGTH_SHORT).show();
@@ -114,5 +117,12 @@ public class RegisterActivity extends AppCompatActivity{
 
             }
         });
+    }
+
+    private void createAuthProgressDialog() {
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.setMessage("Authenticating with Firebase...");
+        mAuthProgressDialog.setCancelable(false);
     }
 }

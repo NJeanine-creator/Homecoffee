@@ -54,6 +54,12 @@ public class Order extends AppCompatActivity {
         //Find the user's name
         EditText nameField = (EditText) findViewById(R.id.name_field);
         String value = nameField.getText().toString();
+
+        EditText phoneField = (EditText) findViewById(R.id.phone_field);
+        value = phoneField.getText().toString();
+
+        EditText addressField = (EditText) findViewById(R.id.address_field);
+        value = addressField.getText().toString();
         //Figure out if the user wants whipped cream topping
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
@@ -61,7 +67,7 @@ public class Order extends AppCompatActivity {
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
         int price = calculatePrice(hasWhippedCream, hasChocolate);
-        String priceMessage = createOrderSummary(value, price, hasWhippedCream, hasChocolate);
+        String priceMessage = createOrderSummary(value,value,value,price, hasWhippedCream, hasChocolate);
         displayMessage(priceMessage);
     }
 
@@ -86,8 +92,11 @@ public class Order extends AppCompatActivity {
     /**
      * This method creates a summary of order.
      */
-    private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
-        String priceMessage = "Name: " + name;
+    private String createOrderSummary(String name, String address, String phone, int price, boolean addWhippedCream, boolean addChocolate) {
+        String priceMessage;
+        priceMessage ="Name : " + name;
+        priceMessage = "Phone Number: " + phone;
+        priceMessage = "Address: " + address;
         priceMessage += "\nAdd whipped cream? " + addWhippedCream;
         priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity: " + quantity;

@@ -38,8 +38,13 @@
     <string name="password">password</string>
     <string name="repassword">Enter the password</string>
     <string name="register">Registration</string>
-    <string name="cancel">Come back</string>
+    <string name="cancel">Return back</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="login">Login</string>
 
+    <style name="MenuStyle" parent="Theme.AppCompat.Light">
+        <item name="android:background">@android:color/white</item>
+    </style>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

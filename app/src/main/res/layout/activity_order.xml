@@ -20,12 +20,25 @@
             android:layout_height="wrap_content"
             android:hint="Name"
             android:inputType="textCapWords" />
+        <EditText
+            android:id="@+id/phone_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="textCapWords" />
+        <EditText
+            android:id="@+id/address_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            android:inputType="textCapWords" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="Toppings"
+            android:textColor="@color/black"
             android:textAllCaps="true" />
 
         <CheckBox
