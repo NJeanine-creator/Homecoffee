@@ -23,4 +23,5 @@
     <color name="colorSecondaryText">#727272</color>
     <color name="colorDivider">#B6B6B6</color>
     <color name="green">@color/green</color>
+    <color name="blue">@color/blue</color>
 </resources>
