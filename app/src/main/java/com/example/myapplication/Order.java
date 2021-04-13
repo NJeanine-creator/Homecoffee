@@ -52,8 +52,9 @@ public class Order extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         //Find the user's name
+        String value;
         EditText nameField = (EditText) findViewById(R.id.name_field);
-        String value = nameField.getText().toString();
+        value = nameField.getText().toString();
 
         EditText phoneField = (EditText) findViewById(R.id.phone_field);
         value = phoneField.getText().toString();
@@ -94,7 +95,7 @@ public class Order extends AppCompatActivity {
      */
     private String createOrderSummary(String name, String address, String phone, int price, boolean addWhippedCream, boolean addChocolate) {
         String priceMessage;
-        priceMessage ="Name : " + name;
+        priceMessage = "Name: " + name;
         priceMessage = "Phone Number: " + phone;
         priceMessage = "Address: " + address;
         priceMessage += "\nAdd whipped cream? " + addWhippedCream;
@@ -120,6 +121,6 @@ public class Order extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView OrderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         OrderSummaryTextView.setText(message);
-    }
+     }
 }
 
