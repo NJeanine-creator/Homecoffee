@@ -1,93 +1,38 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.Button;
 
-import com.google.firebase.auth.FirebaseAuth;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
+import com.example.myapplication.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    private void logout() {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
+    @BindView(R.id.btnGo) Button mGo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+        ButterKnife.bind(this);
+        FragmentManager fm = getSupportFragmentManager();
+        //DailyChoose dailyChoose = new DailyChoose ();
+        // PromptActivity promptActivity=new PromptActivity();
+        // promptActivity.show(fm, "Sample Fragment");
 
+        mGo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                Handler objHandler = new Handler();
-                objHandler.post(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        // TODO Auto-generated method stub
-                        Toast.makeText(getBaseContext(), "You can make order now", Toast.LENGTH_LONG).show();
-                    }
-                    {
-                        if (position == 0) {
-                            Intent intent = new Intent(MainActivity.this, DrinksActivity.class);
-                            startActivity(intent);
-
-                        }
-                        if (position == 1) {
-                            Intent intent = new Intent(MainActivity.this, CappuccinoActivity.class);
-                            startActivity(intent);
-                        }
-                        if (position == 2) {
-                            Intent intent = new Intent(MainActivity.this, FilterActivity.class);
-                            startActivity(intent);
-                        }
-                    }
- /* public void OnItemClick(AdapterView<?> listView, View v, int position,long id ){
-
- } */
-                });
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,HomeActivity.class);
+                startActivity(intent);
             }
-        };
-
-        ListView listView = (ListView) findViewById(R.id.list_options);
-        listView.setOnItemClickListener(itemClickListener);
-                }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_logout) {
-            logout();
-            return true;
-        }
-        else if (id==R.id.action_saved_events){
-            Intent intent=new Intent(MainActivity.this,FindUserFragment.class);
-            startActivity(intent);
-        }
-
-        return super.onOptionsItemSelected(item);
+        });
     }
 }

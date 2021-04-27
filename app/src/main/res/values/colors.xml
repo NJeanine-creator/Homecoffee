@@ -24,4 +24,5 @@
     <color name="colorDivider">#B6B6B6</color>
     <color name="green">@color/green</color>
     <color name="blue">@color/blue</color>
+    <color name="colorPrimaryText">@color/colorPrimaryText</color>
 </resources>

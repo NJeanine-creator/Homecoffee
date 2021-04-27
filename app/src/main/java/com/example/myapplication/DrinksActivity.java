@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.example.myapplication.R;
 
 public class DrinksActivity extends Activity {
     //@BindView(R.id.button) Button order;

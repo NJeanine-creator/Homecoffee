@@ -1,98 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDBFDD"
-    tools:context=".MainActivity">
+    android:background="@drawable/home2"
+    tools:context=".HomeActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/hometitle"
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="0dp"
+        android:text="Order your coffee here!"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        tools:layout_editor_absoluteX="206dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_below="@+id/hometitle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="622dp"
+        android:layout_marginEnd="707dp"
+        android:layout_marginRight="707dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="Lets Go"
+        android:textSize="30sp" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="553dp"
-        android:layout_height="235dp"
-
-        android:contentDescription="@string/applogo"
-        android:src="@drawable/coffee3"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="560dp"
-        tools:layout_editor_absoluteY="-7dp" />
-
-    <ListView
-        android:id="@+id/list_options"
-        android:layout_width="536dp"
-        android:layout_height="192dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:background="#FBF6F6"
-        android:contentDescription="@string/description"
-        android:entries="@array/options"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="156dp"
-        android:layout_height="129dp"
-        android:layout_marginStart="600dp"
-        android:layout_marginLeft="600dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_options"
-        app:srcCompat="@drawable/cofee1"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="159dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="660dp"
-        android:layout_marginRight="660dp"
-        android:contentDescription="@string/description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_options"
-        app:srcCompat="@drawable/coffee4"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="155dp"
-        android:layout_height="108dp"
-        android:layout_marginStart="584dp"
-        android:layout_marginLeft="584dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/coffee5"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="165dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="652dp"
-        android:layout_marginRight="652dp"
-        android:contentDescription="@string/description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/coffee6"
-        tools:ignore="MissingConstraints" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
