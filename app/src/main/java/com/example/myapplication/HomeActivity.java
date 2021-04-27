@@ -14,7 +14,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-
 public class HomeActivity extends AppCompatActivity {
 
     private void logout() {
@@ -24,12 +23,11 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
+        inflater.inflate(R.menu.menu_search, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
