@@ -12,7 +12,7 @@ import com.example.myapplication.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     @BindView(R.id.btnGo) Button mGo;
     @BindView(R.id.btnsearch) Button msearch;

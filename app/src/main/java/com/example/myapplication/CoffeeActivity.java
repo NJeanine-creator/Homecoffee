@@ -2,7 +2,10 @@ package com.example.myapplication;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,7 +26,10 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class CoffeeActivity extends AppCompatActivity {
-    public static final String TAG = com.example.myapplication.CoffeeActivity.class.getSimpleName();
+    private SharedPreferences mSharedPreferences;
+    private String mRecentAddress;
+
+    public static final String TAG = CoffeeActivity.class.getSimpleName();
     private ArrayList<Coffee> coffee = new ArrayList<>();
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
@@ -38,6 +44,11 @@ public class CoffeeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
         getCoffee(location);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+        Log.d("Shared Pref Location", mRecentAddress);
+        location = mRecentAddress;
     }
 
     private void getCoffee(String location){
@@ -52,12 +63,12 @@ public class CoffeeActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 coffee = yelpClient.processResults(response);
-                com.example.myapplication.CoffeeActivity.this.runOnUiThread(new Runnable() {
+                CoffeeActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         mAdapter = new CoffeeListAdapter(getApplicationContext(), coffee);
                         mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(com.example.myapplication.CoffeeActivity.this);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(CoffeeActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }
