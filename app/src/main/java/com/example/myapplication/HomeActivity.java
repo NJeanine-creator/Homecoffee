@@ -62,6 +62,7 @@ public class HomeActivity extends AppCompatActivity {
                             Intent intent = new Intent(HomeActivity.this, FilterActivity.class);
                             startActivity(intent);
                         }
+
                     }
  /* public void OnItemClick(AdapterView<?> listView, View v, int position,long id ){
 
