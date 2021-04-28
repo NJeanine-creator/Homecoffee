@@ -5,7 +5,7 @@
     <item name="phoneTextView" type="id" />
     <item name="addressTextView" type="id" />
     <item name="savecoffeebtn" type="id" />
-    <item name="findCoffee" type="id">findCoffee</item>
-    <item name="locationEditText" type="id">locationEditText</item>
-    <item name="appNameTextView" type="id">appNameTextView</item>
+    <item name="findCoffee" type="id"/>
+    <item name="locationEditText" type="id"/>
+    <item name="appNameTextView" type="id"/>
 </resources>

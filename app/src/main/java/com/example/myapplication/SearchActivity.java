@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener{
     private static final String TAG = SearchActivity.class.getSimpleName();
     @BindView(R.id.findCoffee)
-    Button mhotel;
+    Button mcoffee;
     @BindView(R.id.locationEditText)
     EditText mlocation;
     @BindView(R.id.appNameTextView)
@@ -30,12 +30,12 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
         Typeface caviarFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
         mAppNameTextView.setTypeface(caviarFont);
-        mhotel.setOnClickListener(this);
+        mcoffee.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v){
-        if(v == mhotel) {
+        if(v == mcoffee) {
             Intent intent = new Intent(SearchActivity.this, CoffeeActivity.class);
             String location = mlocation.getText().toString();
             intent.putExtra("location", location);
