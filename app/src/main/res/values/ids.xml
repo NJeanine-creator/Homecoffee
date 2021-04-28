@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="coffeetype" type="id">coffeetype</item>
-    <item name="websiteTextView" type="id">websiteTextView</item>
-    <item name="phoneTextView" type="id">phoneTextView</item>
-    <item name="addressTextView" type="id">addressTextView</item>
-    <item name="savecoffeebtn" type="id">savecoffeebtn</item>
+    <item name="coffeetype" type="id"/>
+    <item name="websiteTextView" type="id"/>
+    <item name="phoneTextView" type="id" />
+    <item name="addressTextView" type="id" />
+    <item name="savecoffeebtn" type="id" />
 </resources>

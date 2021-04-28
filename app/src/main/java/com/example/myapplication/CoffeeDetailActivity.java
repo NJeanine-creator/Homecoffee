@@ -5,9 +5,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.coffeeshop.R;
-import com.example.coffeeshop.adapter.CoffeePageADapter;
-import com.example.coffeeshop.models.Coffee;
+import com.example.myapplication.R;
+import com.example.myapplication.adapter.CoffeePageADapter;
+import com.example.myapplication.models.Coffee;
 
 import org.parceler.Parcels;
 
