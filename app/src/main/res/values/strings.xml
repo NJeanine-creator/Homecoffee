@@ -50,4 +50,5 @@
     <string name="order_your_coffee_here">Order your coffee here!</string>
     <string name="lets_go">Lets Go</string>
     <string name="search_other_coffee_shop">Search other Coffee Shop</string>
+    <string name="search">Search</string>
 </resources>

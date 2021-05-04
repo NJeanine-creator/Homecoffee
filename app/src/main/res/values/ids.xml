@@ -8,4 +8,5 @@
     <item name="findCoffee" type="id"/>
     <item name="locationEditText" type="id"/>
     <item name="appNameTextView" type="id"/>
+    <item name="imageViewMain" type="id">@+id/imageViewMain</item>
 </resources>
