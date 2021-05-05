@@ -7,34 +7,28 @@
     android:background="#2E2020"
     tools:context=".DrinksActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="259dp"
-        android:layout_height="194dp"
-        android:background="#0C0C0C"
-        android:contentDescription="@string/description"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="423dp"
+        android:layout_height="225dp"
+        android:src="@drawable/tenor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/coffee2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="152dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
         android:text="@string/latte"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/gifImageView"
         tools:ignore="MissingConstraints" />
 
     <TextView

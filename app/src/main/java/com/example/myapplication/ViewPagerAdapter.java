@@ -37,7 +37,7 @@ class ViewPagerAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view == ((ImageView) object);
+        return view == ((LinearLayout) object);
     }
 
     @NonNull
@@ -63,6 +63,6 @@ class ViewPagerAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
 
-        container.removeView((ImageView) object);
+        container.removeView((LinearLayout) object);
     }
 }

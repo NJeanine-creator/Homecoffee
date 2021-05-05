@@ -18,6 +18,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity  {
+    ViewPager mViewPager;
+
+    //images array
+    int[] images = {R.drawable.coffeeshophome, R.drawable.coffebackground, R.drawable.coffeeshop, R.drawable.coffee5,
+            R.drawable.coffee4, R.drawable.coffee3, R.drawable.coffee2, R.drawable.cofee1};
+
+    //Creating Object of ViewPagerAdapter
+    ViewPagerAdapter mViewPagerAdapter;
 
     private TextView mTextView;
 
@@ -47,8 +55,8 @@ public class MainActivity extends AppCompatActivity  {
                 Intent intent=new Intent(MainActivity.this,HomeActivity.class);
                 startActivity(intent);
                 YoYo.with(Techniques.Tada)
-                        .duration(1000)
-                        .repeat(2)
+                        .duration(700)
+                        .repeat(1)
                         .playOn(mTextView);
             }
         });
